@@ -21,7 +21,7 @@ export default function Authentication() {
             body: JSON.stringify(authenticationData)
         })
             .then(response => response.json())
-            .then(data => data.status === 'Success' ? window.location.href = '/coffees' : alert('Error de autenticacion. Revise sus credenciales.'))
+            .then(data => data.status === 'success' ? window.location.href = '/coffees' : alert('Error de autenticacion. Revise sus credenciales.'))
     }
 
     const handleCancel = () => {

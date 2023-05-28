@@ -8,11 +8,10 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1 style={{ textAlign: 'center' }}>EL AROMA MAGICO</h1>
-      </div>
-      <div className="container">
-        {/* Add an image from link */}
-        {/* <img src="https://www.cafeselabra.com/wp-content/uploads/2019/03/cafetera-italiana.jpg" alt="Cafetera" /> */}
+        <h1 style={{ marginLeft: '4rem' }}>
+          EL AROMA MAGICO
+        </h1>
+        <div><img style={{ width: '92%', marginLeft: '4rem' }} src='coffee.png' alt='Coffee' /></div>
       </div>
       <BrowserRouter>
         <Routes>

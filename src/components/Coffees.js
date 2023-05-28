@@ -1,5 +1,6 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import { FormattedMessage } from "react-intl";
 
 export default function Coffees() {
     const [coffees, setCoffees] = React.useState([]);
@@ -30,7 +31,7 @@ export default function Coffees() {
     const tableRows = coffees.map((coffee, index) => {
 
         let rowStyles = {
-            height: '40px', // Adjust the height as needed
+            // Adjust the height as needed
         };
 
         return (
@@ -56,39 +57,41 @@ export default function Coffees() {
 
     function coffeeCard(coffee) {
         return (
-            <Card style={{
-                width: '18rem',
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100vh"
+
+            <Card className="text-center" style={{
+                width: '22rem'
 
             }}>
-                <Card.Body>
-                    <Card.Title>{coffee.nombre}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{coffee.fecha_cultivo}</Card.Subtitle>
-                    <Card.Img variant="top" src={coffee.imagen} style={{ width: '10rem' }} />
-                    <Card.Text>
-                        Notas
+                <Card.Body style={{ backgroundColor: '#f9f1f1', marginLeft: '5rem', border: '2px solid black' }}>
+                    <Card.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{coffee.nombre}</Card.Title>
+                    <Card.Subtitle style={{ textAlign: 'center' }} className="mb-2 text-muted">{coffee.fecha_cultivo}</Card.Subtitle>
+                    <Card.Img variant="top" src={coffee.imagen} style={{ width: '10rem', marginLeft: '3rem' }} />
+                    <Card.Text style={{ textAlign: 'center', marginLeft: '1rem', marginRight: '1rem' }}>
+                        <FormattedMessage id="notes"></FormattedMessage>
                         <br />
                         {coffee.notas}
                     </Card.Text>
-                    <Card.Text>
-                        Cultivado a una altura de: {coffee.altura} msnm
+                    <Card.Text style={{ textAlign: 'center', fontWeight: 'bold', marginLeft: '1rem', marginRight: '1rem' }}>
+                        <FormattedMessage id="height"></FormattedMessage> {coffee.altura} <FormattedMessage id="meters"></FormattedMessage>
                     </Card.Text>
                 </Card.Body>
             </Card>
+
         )
     }
 
     function makeTable() {
         return (
-            <table className="table" style={{ borderCollapse: 'separate', borderSpacing: '0 0.5rem' }}>
-                <thead style={{ background: 'black', color: 'white' }}>
+            <table className="table" style={{ borderCollapse: 'separate', borderSpacing: '0 0.5rem', marginLeft: '4rem' }}>
+                <thead style={{ background: '#333A40', color: 'white', height: '2.5rem' }}>
                     <tr>
                         <th scope="col" style={{ width: "5rem" }}>#</th>
-                        <th scope="col" style={{ width: "20rem" }}>Nombre</th>
-                        <th scope="col" style={{ width: "10rem" }}>Tipo</th>
+                        <th scope="col" style={{ width: "20rem" }}>
+                            <FormattedMessage id="name"></FormattedMessage>
+                        </th>
+                        <th scope="col" style={{ width: "10rem" }}>
+                            <FormattedMessage id="type"></FormattedMessage>
+                        </th>
                         <th scope="col" style={{ width: "15rem" }}>Region</th>
                     </tr>
                 </thead>
@@ -101,18 +104,23 @@ export default function Coffees() {
 
     return (
         <>
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100vh"
-                }}>
-                {makeTable()}
+            <div>
+                <div
+                    style={{
+                        display: "flex",
 
-                <div>
-                    {coffee && coffeeCard(coffee)}
+
+                    }}>
+                    {makeTable()}
+
+                    <div>
+                        {coffee && coffeeCard(coffee)}
+                    </div>
+
                 </div>
+                <p style={{ textAlign: 'center', marginTop: '5rem' }}>
+                    <FormattedMessage id="contact"></FormattedMessage>: +57 3102105253 - info@elaromamagico.com - @elaromamagico
+                </p>
             </div>
         </>
     );

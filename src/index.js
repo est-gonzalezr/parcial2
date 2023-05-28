@@ -5,18 +5,16 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { IntlProvider } from 'react-intl';
+import localeEsMessages from "./locales/es.json";
+import localeEnMessages from "./locales/en.json";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <>
-    <styles>
-    </styles>
-    <React.StrictMode>
-      <IntlProvider locale="es" >
-        <App />
-      </IntlProvider>
-    </React.StrictMode>
-  </>
+  <React.StrictMode>
+    <IntlProvider locale="es-ES" messages={localeEnMessages}>
+      <App />
+    </IntlProvider>
+  </React.StrictMode>, document.getElementById('root')
 );
 
 

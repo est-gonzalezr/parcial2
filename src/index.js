@@ -8,10 +8,14 @@ import { IntlProvider } from 'react-intl';
 import localeEsMessages from "./locales/es.json";
 import localeEnMessages from "./locales/en.json";
 
+// get language from browser or use default language
+const language = navigator.language.split(/[-_]/)[0];  // language without region code
+const messages = language === 'en' ? localeEnMessages : localeEsMessages;
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <IntlProvider locale="es-ES" messages={localeEsMessages}>
+    <IntlProvider locale="es-ES" messages={messages}>
       <App />
     </IntlProvider>
   </React.StrictMode>, document.getElementById('root')

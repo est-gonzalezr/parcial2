@@ -15,7 +15,7 @@ const messages = language === 'en' ? localeEnMessages : localeEsMessages;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <IntlProvider locale="es-ES" messages={messages}>
+    <IntlProvider messages={messages}>
       <App />
     </IntlProvider>
   </React.StrictMode>, document.getElementById('root')

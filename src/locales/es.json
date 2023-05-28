@@ -9,5 +9,6 @@
     "notes": "Notas",
     "height": "Cultivado a una altura de",
     "meters": "msnm",
-    "contact": "Contactenos"
+    "contact": "Contactenos",
+    "authentication": "Error de autenticación. Usuario o contraseña incorrectos."
 }

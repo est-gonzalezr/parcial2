@@ -9,5 +9,6 @@
     "notes": "Notes",
     "height": "Grown at a height of",
     "meters": "masl",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "authentication": "Authentication Error. Incorrect user or password."
 }

@@ -11,7 +11,7 @@ import localeEnMessages from "./locales/en.json";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <IntlProvider locale="es-ES" messages={localeEnMessages}>
+    <IntlProvider locale="es-ES" messages={localeEsMessages}>
       <App />
     </IntlProvider>
   </React.StrictMode>, document.getElementById('root')
